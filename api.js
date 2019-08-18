@@ -2,7 +2,6 @@ const search = document.getElementById('search');
 const searchBtn = document.getElementById('button-addon2');
 const resultBox = document.getElementById('result-box')
 
-
 searchBtn.addEventListener('click', runSearch); 
 
 // Click the search button when 'Enter' is pressed in the search bar
@@ -38,9 +37,9 @@ function fetchResults(type) {
     checkResults(json);
     });
 
+    let resultsFound = 0;
     function checkResults(json){
         // console.log(json)
-        let resultsFound = 0;
         if(searchType == 'title') {
             for(let i = 0; i < json.length; i++) {
                 // console.log(i);
@@ -58,7 +57,10 @@ function fetchResults(type) {
             console.log('Error: Searchtype:', searchType);
         }
         if(resultsFound == 0) {
-            displayResults(false);
+            // displayResults(false);
+            resultBox.appendChild(document.createTextNode('No results found.'));
+        } else {
+            resultBox.insertBefore(document.createTextNode(resultsFound + ' result(s) found.'), resultBox.childNodes[0]);
         }
     }
 
@@ -74,54 +76,27 @@ function fetchResults(type) {
         let rtScore = document.createElement('p');
         let br = document.createElement('br');
 
+        row.className = "row result";
+        col1.className = "col-sm";
+        col2.className = "col-sm";
 
+        title.textContent = film.title;
+        description.textContent = film.description;
+        director.textContent = 'Director: ' + film.director;
+        producer.textContent = 'Producer: ' + film.producer;
+        releaseDate.textContent = 'Release date: ' + film.release_date;
+        rtScore.textContent = 'Rotten Tomatoes score: ' + film.rt_score;
+        
+        row.appendChild(col1);
+        row.appendChild(col2);
+        col1.appendChild(title);
+        col1.appendChild(director);
+        col1.appendChild(producer);
+        col1.appendChild(releaseDate);
+        col1.appendChild(rtScore);
+        col2.appendChild(description);
 
-
-        if(!film){
-            document.body.appendChild(document.createTextNode('No results found.'))
-        } else {
-            row.className = "row result";
-            col1.className = "col-sm";
-            col2.className = "col-sm";
-
-
-            title.textContent = film.title;
-            description.textContent = film.description;
-            director.textContent = 'Director: ' + film.director;
-            producer.textContent = 'Producer: ' + film.producer;
-            releaseDate.textContent = 'Release date: ' + film.release_date;
-            rtScore.textContent = 'Rotten Tomatoes score: ' + film.rt_score;
-            
-            row.appendChild(col1);
-            row.appendChild(col2);
-            col1.appendChild(title);
-            col1.appendChild(director);
-            col1.appendChild(producer);
-            col1.appendChild(releaseDate);
-            col1.appendChild(rtScore);
-            col2.appendChild(description);
-
-            resultBox.appendChild(row);
-            resultBox.appendChild(br);
-        }
+        resultBox.appendChild(row);
+        resultBox.appendChild(br);
     }
-
-    // let div = document.createElement('div');
-    // let title = document.createElement('h3');
-    // let description = document.createElement('p');
-    // function displayResults(film) {
-    //     if(!film) {
-    //         let text = document.createTextNode('No results found');
-    //         title.appendChild(text);
-    //         document.body.appendChild(title);
-    //     } else {
-    //         title.appendChild(document.createTextNode('Title: ', film.title));
-    //         description.appendChild(document.createTextNode('Description: ', film.description))
-
-    //         div.appendChild(title);
-    //         div.appendChild(description);
-
-    //         document.body.appendChild(div);
-    //     }
-    // }
 }
