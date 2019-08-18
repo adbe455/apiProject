@@ -1,0 +1,31 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif
+}
+
+.jumbotron {
+    font-style: italic;
+    color: white;
+    margin-top: 10vh;
+}
+
+#jumboheader {
+    border: 1px solid white;
+    letter-spacing: 0.3em;
+}
+
+.bold-text {
+    font-weight: 400;
+}
+
+.btn {
+    color: white;
+}
+
+.col-sm {
+    margin: 20px;
+}
+
+.result {
+    border: dodgerblue solid 2px;
+    border-radius: 2px;
+}
