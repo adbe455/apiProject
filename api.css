@@ -1,5 +1,6 @@
 :root {
     --blue: #419db9;
+    --darkblue: #31778d;
 }
 
 body {
@@ -37,7 +38,7 @@ body {
 
 .btn {
     color: white;
-    background-color: var(--blue);
+    background-color: var(--darkblue);
 }
 
 .result {
@@ -50,4 +51,9 @@ body {
     /* bootstrap gutter width (left/right margins) is 15px */
     margin-top: 15px; 
     /* margin-bottom: 15px; */
+}
+
+.btn-group {
+    display: block;
+    justify-content: right;
 }
