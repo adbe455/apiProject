@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "ghibliengine"
+    "default": "ghibliengine",
+    "ghibliEngine": "ghibliengine"
   }
 }

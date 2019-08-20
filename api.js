@@ -9,13 +9,9 @@ let resultsFound;
 let peopleBtn = [];
 // let locationsBtn = [];
 // let speciesBtn = [];
+// let vehiclesBtn = [];
 
 searchBtn.addEventListener('click', runSearch); 
-
-// peopleBtn.addEventListener('click', fetchInfo("people"));
-// locationsBtn.addEventListener('click', fetchInfo("locations"));
-// speciesBtn.addEventListener('click', fetchInfo("species"));
-// vehiclesBtn.addEventListener('click', fetchInfo("vehicles"));
 
 // Click the search button when 'Enter' is pressed in the search bar
 search.addEventListener("keyup", function(event) {
@@ -106,9 +102,9 @@ function displayResults(film) {
     let btnGroup = document.createElement('div');
     
     peopleBtn = document.createElement('button');
-    let locationsBtn = document.createElement('button');
-    let speciesBtn = document.createElement('button');
-    let vehiclesBtn = document.createElement('button');
+    // let locationsBtn = document.createElement('button');
+    // let speciesBtn = document.createElement('button');
+    // let vehiclesBtn = document.createElement('button');
     
     row.className = "row result";
     col1.className = "c col1 col-sm-2";
@@ -117,27 +113,27 @@ function displayResults(film) {
     col4.className = "c col4 col-sm-2";
 
     peopleBtn.type = "button";
-    locationsBtn.type = "button";
-    speciesBtn.type = "button";
-    vehiclesBtn.type = "button";
+    // locationsBtn.type = "button";
+    // speciesBtn.type = "button";
+    // vehiclesBtn.type = "button";
 
     peopleBtn.className = "btn btn-outline-light people";
-    locationsBtn.className = "btn btn-outline-light locations";
-    speciesBtn.className = "btn btn-outline-light species";
-    vehiclesBtn.classList = "btn btn-outline-light vehicles";
+    // locationsBtn.className = "btn btn-outline-light locations";
+    // speciesBtn.className = "btn btn-outline-light species";
+    // vehiclesBtn.classList = "btn btn-outline-light vehicles";
 
     
     peopleBtn.textContent = "People";
-    locationsBtn.textContent = "Locations";
-    speciesBtn.textContent = "Species";
-    vehiclesBtn.textContent = "Vehicles";
+    // locationsBtn.textContent = "Locations";
+    // speciesBtn.textContent = "Species";
+    // vehiclesBtn.textContent = "Vehicles";
     
     // add btn-group-toggle for toggle buttons
     btnGroup.className = "btn-group-vertical float-right";
     btnGroup.role = "group";
     
     
-    image.src = '../API/assets/film-art/' + i + '.jpg';
+    image.src = './assets/film-art/' + i + '.jpg';
     title.textContent = film.title;
     description.textContent = film.description;
     director.textContent = 'Director: ' + film.director;
@@ -145,12 +141,12 @@ function displayResults(film) {
     releaseDate.textContent = 'Release date: ' + film.release_date;
     rtScore.textContent = 'Rotten Tomatoes score: ' + film.rt_score + '%';
     
-    if(film.people[0].includes('-')) {btnGroup.appendChild(peopleBtn)}
-    // console.log(film.people[0]);
-    // console.log(film.people[0].includes('-'));
-    if(film.locations[0].includes('-')) {btnGroup.appendChild(locationsBtn)}
-    if(film.species[0].includes('-')) {btnGroup.appendChild(speciesBtn)}
-    if(film.vehicles[0].includes('-')) {btnGroup.appendChild(vehiclesBtn)}
+    // if(film.people[0].includes('-')) {btnGroup.appendChild(peopleBtn)}
+    // // console.log(film.people[0]);
+    // // console.log(film.people[0].includes('-'));
+    // if(film.locations[0].includes('-')) {btnGroup.appendChild(locationsBtn)}
+    // if(film.species[0].includes('-')) {btnGroup.appendChild(speciesBtn)}
+    // if(film.vehicles[0].includes('-')) {btnGroup.appendChild(vehiclesBtn)}
     
     row.appendChild(col1);
     row.appendChild(col2);
@@ -173,14 +169,14 @@ function displayResults(film) {
     // peopleBtn.addEventListener('click', console.log('people' + i))
     
     let people = "people" + i;
-    let locations = "locations" + i;
-    let species = "species" + i;
-    let vehicles = "vehicles" + i;
+    // let locations = "locations" + i;
+    // let species = "species" + i;
+    // let vehicles = "vehicles" + i;
     
     peopleBtn.id = people;
-    locationsBtn.id = locations;
-    speciesBtn.id = species;
-    vehiclesBtn.id = vehicles;
+    // locationsBtn.id = locations;
+    // speciesBtn.id = species;
+    // vehiclesBtn.id = vehicles;
     
     // document.getElementById().addEventListener('click', () => fetchInfo("people", film.id))
 }
