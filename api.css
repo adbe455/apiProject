@@ -1,6 +1,6 @@
 :root {
-    --blue: #419db9;
-    --darkblue: #31778d;
+    --blue: #328fac;
+    --darkblue: #287288;
 }
 
 body {
@@ -8,6 +8,8 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     background: url(./assets/the-wind-rises-wallpapers-26150-1070731.jpg) center center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .jumbotron {
@@ -20,17 +22,20 @@ body {
 
 #jumbo-header {
     letter-spacing: 0.3em;
-    /* border-bottom: white solid 1px; */
+    border-bottom: white solid 1px;
+    margin-left: 10vw;
+    margin-right: 10vw;
 }
 
-#jumbo-underline {
-    width: 600px;
+/* #jumbo-underline {
+    width: 35vw;
     height: 1px;
     background-color: white;
     text-align: center;
     display: inline-block;
     margin-bottom: 10px;
-}
+    margin-right: 20px;
+} */
 
 .bold-text {
     font-weight: 400;
@@ -50,10 +55,11 @@ body {
 .c {
     /* bootstrap gutter width (left/right margins) is 15px */
     margin-top: 15px; 
-    /* margin-bottom: 15px; */
+    margin-bottom: 15px;
 }
 
-.btn-group {
-    display: block;
-    justify-content: right;
+.table {
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 0px;
 }
